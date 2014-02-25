@@ -30,21 +30,9 @@ ros/assert.h
 std_msgs/Header.h
 /home/bastien/ros/sandbox/ardrone_autonomy/msg_gen/cpp/include/ardrone_autonomy/std_msgs/Header.h
 
-/home/bastien/ros/sandbox/ps_ardrone/src/ardrone.h
-ros/ros.h
--
-std_msgs/Empty.h
--
-geometry_msgs/Twist.h
--
-communicationcontroller.h
-/home/bastien/ros/sandbox/ps_ardrone/src/communicationcontroller.h
-navdatacontroller.h
-/home/bastien/ros/sandbox/ps_ardrone/src/navdatacontroller.h
+/home/bastien/ros/sandbox/ps_ardrone/src/cameracontroller.cpp
 cameracontroller.h
 /home/bastien/ros/sandbox/ps_ardrone/src/cameracontroller.h
-boost/thread.hpp
--
 
 /home/bastien/ros/sandbox/ps_ardrone/src/cameracontroller.h
 ros/ros.h
@@ -62,6 +50,10 @@ opencv2/highgui/highgui.hpp
 boost/thread.hpp
 -
 
+/home/bastien/ros/sandbox/ps_ardrone/src/communicationcontroller.cpp
+communicationcontroller.h
+/home/bastien/ros/sandbox/ps_ardrone/src/communicationcontroller.h
+
 /home/bastien/ros/sandbox/ps_ardrone/src/communicationcontroller.h
 ros/ros.h
 -
@@ -72,11 +64,9 @@ geometry_msgs/Twist.h
 boost/thread.hpp
 -
 
-/home/bastien/ros/sandbox/ps_ardrone/src/main.cpp
-ros/ros.h
--
-ardrone.h
-/home/bastien/ros/sandbox/ps_ardrone/src/ardrone.h
+/home/bastien/ros/sandbox/ps_ardrone/src/navdatacontroller.cpp
+navdatacontroller.h
+/home/bastien/ros/sandbox/ps_ardrone/src/navdatacontroller.h
 
 /home/bastien/ros/sandbox/ps_ardrone/src/navdatacontroller.h
 ros/ros.h

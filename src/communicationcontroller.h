@@ -28,12 +28,18 @@ public:
 
 
     //twist
-    void sendTwistMsg(std::string to);
+    void sendTwistMsg(std::string to, geometry_msgs::Twist twist_msg);
+    void sendTwistMsgRepeated(std::string to, geometry_msgs::Twist twist_msg, int refreshRate, float sec, bool verbose = false);
+
+    boost::thread* sendAsyncTwistMsg(std::string to, geometry_msgs::Twist twist_msg);
+    boost::thread* sendAsyncTwistMsgRepeated(std::string to, geometry_msgs::Twist twist_msg, int refreshRate, float sec, bool verbose = false);
+
 private:
     //Singleton
     static CommunicationController* _cc;
 
 
 };
+
 
 #endif // COMMUNICATION_H
