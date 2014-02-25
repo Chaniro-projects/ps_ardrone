@@ -1,4 +1,5 @@
 #include "ardrone.h"
+
 Ardrone* Ardrone::_ardrone = NULL;
 
 Ardrone::Ardrone(int refresh, bool verbose) : loop_rate(refresh), refreshRate(refresh),
