@@ -10,6 +10,14 @@
 
 #include <boost/thread.hpp>
 
+/*
+ * Camera control class
+ * Design pattern: singleton
+ * Usage: CameraController::getInstance().showLastImage();
+ * Call start to start subscribe to /ardrone/front/image_raw topic
+ *  then call stop to end it
+ */
+
 class CameraController
 {
 public:
