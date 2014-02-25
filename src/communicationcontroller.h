@@ -6,6 +6,12 @@
 #include <geometry_msgs/Twist.h>
 #include <boost/thread.hpp>
 
+/*
+ * Communication control class (send message to other node)
+ * Design pattern: singleton
+ * Usage: CommunicationController::getInstance().sendAsyncEmptyMsg();
+ * Method are both sync or async
+ */
 
 class CommunicationController
 {
