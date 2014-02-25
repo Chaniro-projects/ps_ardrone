@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/bastien/ros/sandbox/ps_ardrone/build/devel/setup.sh
