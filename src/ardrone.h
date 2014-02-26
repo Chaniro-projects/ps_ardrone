@@ -9,6 +9,13 @@
 #include "cameracontroller.h"
 #include <boost/thread.hpp>
 
+/*
+ * ARDrone control class
+ * Design pattern: singleton
+ * Usage: Ardrone::getInstance().takeOff();
+ * Method are both sync or async
+ */
+
 class Ardrone
 {
 public:

@@ -5,6 +5,14 @@
 #include "ardrone_autonomy/Navdata.h"
 #include <boost/thread.hpp>
 
+/*
+ * Navdata control class (get navigation information)
+ * Design pattern: singleton
+ * Usage: NavdataController::getInstance().getNavdata();
+ * Call start to start subscribe to /ardrone/navdata topic
+ *  then call stop to end it
+ */
+
 class NavdataController
 {
 public:
