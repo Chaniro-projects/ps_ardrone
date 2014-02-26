@@ -27,6 +27,7 @@ public:
     void stop();
     cv::Mat& getImage();
     void showLastImage();
+    void perform();
 
 private:
     //Singleton
