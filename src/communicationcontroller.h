@@ -28,11 +28,24 @@ public:
 
 
     //twist
+    enum eType {
+        linear_x,
+        linear_y,
+        linear_z,
+        angular_x,
+        angular_y,
+        angular_z
+    };
+
     void sendTwistMsg(std::string to, geometry_msgs::Twist twist_msg);
+    void sendTwistMsg(std::string to, float value, eType type);
     void sendTwistMsgRepeated(std::string to, geometry_msgs::Twist twist_msg, int refreshRate, float sec, bool verbose = false);
+    void sendTwistMsgRepeated(std::string to, float value, eType type, int refreshRate, float sec, bool verbose = false);
 
     boost::thread* sendAsyncTwistMsg(std::string to, geometry_msgs::Twist twist_msg);
+    boost::thread* sendAsyncTwistMsg(std::string to, float value, eType type);
     boost::thread* sendAsyncTwistMsgRepeated(std::string to, geometry_msgs::Twist twist_msg, int refreshRate, float sec, bool verbose = false);
+    boost::thread* sendAsyncTwistMsgRepeated(std::string to, float value, eType type, int refreshRate, float sec, bool verbose = false);
 
 private:
     //Singleton
