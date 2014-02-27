@@ -244,6 +244,19 @@ fly/fast:
 .PHONY : fly/fast
 
 #=============================================================================
+# Target rules for targets named hsv
+
+# Build rule for target.
+hsv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hsv
+.PHONY : hsv
+
+# fast build rule for target.
+hsv/fast:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/build
+.PHONY : hsv/fast
+
+#=============================================================================
 # Target rules for targets named land
 
 # Build rule for target.
@@ -586,6 +599,30 @@ src/fly.cpp.s:
 	$(MAKE) -f CMakeFiles/fly.dir/build.make CMakeFiles/fly.dir/src/fly.cpp.s
 .PHONY : src/fly.cpp.s
 
+src/hsv.o: src/hsv.cpp.o
+.PHONY : src/hsv.o
+
+# target to build an object file
+src/hsv.cpp.o:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/hsv.cpp.o
+.PHONY : src/hsv.cpp.o
+
+src/hsv.i: src/hsv.cpp.i
+.PHONY : src/hsv.i
+
+# target to preprocess a source file
+src/hsv.cpp.i:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/hsv.cpp.i
+.PHONY : src/hsv.cpp.i
+
+src/hsv.s: src/hsv.cpp.s
+.PHONY : src/hsv.s
+
+# target to generate assembly for a file
+src/hsv.cpp.s:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/hsv.cpp.s
+.PHONY : src/hsv.cpp.s
+
 src/land.o: src/land.cpp.o
 .PHONY : src/land.o
 
@@ -745,6 +782,7 @@ help:
 	@echo "... doxygen"
 	@echo "... edit_cache"
 	@echo "... fly"
+	@echo "... hsv"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
@@ -781,6 +819,9 @@ help:
 	@echo "... src/fly.o"
 	@echo "... src/fly.i"
 	@echo "... src/fly.s"
+	@echo "... src/hsv.o"
+	@echo "... src/hsv.i"
+	@echo "... src/hsv.s"
 	@echo "... src/land.o"
 	@echo "... src/land.i"
 	@echo "... src/land.s"

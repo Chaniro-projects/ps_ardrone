@@ -8,6 +8,7 @@
 /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/fly.dir
 /home/bastien/ros/sandbox/ps_ardrone/build/gtest/CMakeFiles/gtest.dir
 /home/bastien/ros/sandbox/ps_ardrone/build/gtest/CMakeFiles/gtest_main.dir
+/home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/hsv.dir
 /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/land.dir
 /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/listener.dir
 /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/main.dir

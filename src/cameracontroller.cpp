@@ -137,13 +137,13 @@ void CameraController::threshHSV(bool morph) {
         
         if(morph) {
             Mat erodeElem = getStructuringElement(MORPH_RECT, Size(3, 3));
-            Mat dilateElem = getStructuringElement(MORPH_RECT, Size(8, 8));
+            Mat dilateElem = getStructuringElement(MORPH_RECT, Size(3, 3));
             
             erode(imgRange, imgRange, erodeElem);
             erode(imgRange, imgRange, erodeElem);
             
-            dilate(imgRange, imgRange, erodeElem);
-            dilate(imgRange, imgRange, erodeElem);
+            dilate(imgRange, imgRange, dilateElem);
+            dilate(imgRange, imgRange, dilateElem);
         }
         
         imshow("Normal", img);

@@ -305,13 +305,48 @@ clean: CMakeFiles/fly.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/hsv.dir
+
+# All Build rule for target.
+CMakeFiles/hsv.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/depend
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  5
+	@echo "Built target hsv"
+.PHONY : CMakeFiles/hsv.dir/all
+
+# Include target in all.
+all: CMakeFiles/hsv.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/hsv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hsv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles 0
+.PHONY : CMakeFiles/hsv.dir/rule
+
+# Convenience name for target.
+hsv: CMakeFiles/hsv.dir/rule
+.PHONY : hsv
+
+# clean rule for target.
+CMakeFiles/hsv.dir/clean:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/clean
+.PHONY : CMakeFiles/hsv.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/hsv.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/land.dir
 
 # All Build rule for target.
 CMakeFiles/land.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/land.dir/build.make CMakeFiles/land.dir/depend
 	$(MAKE) -f CMakeFiles/land.dir/build.make CMakeFiles/land.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  6
 	@echo "Built target land"
 .PHONY : CMakeFiles/land.dir/all
 
@@ -346,7 +381,7 @@ clean: CMakeFiles/land.dir/clean
 CMakeFiles/listener.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/listener.dir/build.make CMakeFiles/listener.dir/depend
 	$(MAKE) -f CMakeFiles/listener.dir/build.make CMakeFiles/listener.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  7
 	@echo "Built target listener"
 .PHONY : CMakeFiles/listener.dir/all
 
@@ -381,7 +416,7 @@ clean: CMakeFiles/listener.dir/clean
 CMakeFiles/main.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  7 8 9 10 11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  8 9 10 11 12
 	@echo "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
@@ -416,7 +451,7 @@ clean: CMakeFiles/main.dir/clean
 CMakeFiles/reset.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/reset.dir/build.make CMakeFiles/reset.dir/depend
 	$(MAKE) -f CMakeFiles/reset.dir/build.make CMakeFiles/reset.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  13
 	@echo "Built target reset"
 .PHONY : CMakeFiles/reset.dir/all
 
@@ -670,7 +705,7 @@ clean: CMakeFiles/run_tests.dir/clean
 CMakeFiles/takeoff.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/takeoff.dir/build.make CMakeFiles/takeoff.dir/depend
 	$(MAKE) -f CMakeFiles/takeoff.dir/build.make CMakeFiles/takeoff.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles  14
 	@echo "Built target takeoff"
 .PHONY : CMakeFiles/takeoff.dir/all
 
