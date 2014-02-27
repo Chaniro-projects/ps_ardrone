@@ -73,3 +73,34 @@ void CameraController::showLastImage() {
 
     img_mutex.unlock();
 }
+
+
+void CameraController::perform() {
+    using namespace cv;
+    Mat cimg;
+    medianBlur(lastImg, lastImg, 5);
+    cvtColor(lastImg, cimg, COLOR_RGB2GRAY);
+    std::cout << lastImg.depth() << "   " << cimg.depth() << std::endl;
+    imshow("detected circles", cimg);
+    waitKey();
+    
+    /*GaussianBlur(cimg, cimg, Size(9, 9), 2, 2);
+
+    imshow("detected circles", cimg);
+    waitKey();*/
+    
+    vector<Vec3f> circles;
+    HoughCircles(lastImg, circles, CV_HOUGH_GRADIENT, 1, 10,
+                 100, 30, 1, 30 // change the last two parameters
+                                // (min_radius & max_radius) to detect larger circles
+                 );
+    for( size_t i = 0; i < circles.size(); i++ )
+    {
+        Vec3i c = circles[i];
+        circle( cimg, Point(c[0], c[1]), c[2], Scalar(0,0,255), 3, 0);
+        circle( cimg, Point(c[0], c[1]), 2, Scalar(0,255,0), 3, 0);
+    }
+
+    imshow("detected circles", cimg);
+    waitKey();
+}

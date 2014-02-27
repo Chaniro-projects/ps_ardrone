@@ -41,9 +41,20 @@ int main(int argc, char** argv)
         case 8:
             CameraController::getInstance().showLastImage();
             break;
+<<<<<<< Updated upstream
+        case 9:
+            
+            break;
+=======
+<<<<<<< Updated upstream
+=======
+        case 9:
+            CameraController::getInstance().perform();
+            break;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         }
     }
-
 
     return 0;
 }

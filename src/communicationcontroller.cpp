@@ -2,8 +2,7 @@
 CommunicationController* CommunicationController::_cc = NULL;
 
 CommunicationController::CommunicationController()
-{
-}
+{}
 
 CommunicationController& CommunicationController::getInstance() {
     if(CommunicationController::_cc == NULL)
