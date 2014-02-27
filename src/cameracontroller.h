@@ -27,7 +27,8 @@ public:
     void stop();
     cv::Mat& getImage();
     void showLastImage();
-    void perform();
+    void findCircle(int minDist = 30, int internalCanny = 180, int centerDetection = 30);
+    void threshHSV(bool morph = false);
 
 private:
     //Singleton
@@ -44,6 +45,8 @@ private:
     void __start();
     bool started;
     boost::mutex img_mutex;
+    
+    void showImg(cv::Mat& img);
 };
 
 #endif // CAMERACONTROLLER_H

@@ -75,32 +75,83 @@ void CameraController::showLastImage() {
 }
 
 
-void CameraController::perform() {
+void CameraController::findCircle(int minDist, int internalCanny, int centerDetection) {
     using namespace cv;
-    Mat cimg;
-    medianBlur(lastImg, lastImg, 5);
-    cvtColor(lastImg, cimg, COLOR_RGB2GRAY);
-    std::cout << lastImg.depth() << "   " << cimg.depth() << std::endl;
-    imshow("detected circles", cimg);
-    waitKey();
+    Mat img = lastImg.clone();
     
-    /*GaussianBlur(cimg, cimg, Size(9, 9), 2, 2);
-
-    imshow("detected circles", cimg);
-    waitKey();*/
+    Mat cimg;
+    cvtColor(img, cimg, COLOR_BGR2GRAY);
+    
+    //medianBlur(cimg, cimg, 5);
+    //GaussianBlur(cimg, cimg, Size(9, 9), 2, 2);
     
     vector<Vec3f> circles;
-    HoughCircles(lastImg, circles, CV_HOUGH_GRADIENT, 1, 10,
-                 100, 30, 1, 30 // change the last two parameters
-                                // (min_radius & max_radius) to detect larger circles
-                 );
+    HoughCircles(cimg, circles, CV_HOUGH_GRADIENT, 1, minDist,
+                 internalCanny, centerDetection, 5, 100);
     for( size_t i = 0; i < circles.size(); i++ )
     {
         Vec3i c = circles[i];
-        circle( cimg, Point(c[0], c[1]), c[2], Scalar(0,0,255), 3, 0);
-        circle( cimg, Point(c[0], c[1]), 2, Scalar(0,255,0), 3, 0);
+        circle( img, Point(c[0], c[1]), c[2], Scalar(0,0,255), 3, 0);
+        circle( img, Point(c[0], c[1]), 2, Scalar(0,255,0), 3, 0);
+        std::cout << "Rayon: " << c[2] << std::endl;
     }
 
-    imshow("detected circles", cimg);
-    waitKey();
+    cv::imshow("detected circles", img);
+    cv::waitKey(0);
+}
+
+void CameraController::showImg(cv::Mat& img) {
+    cv::imshow("detected circles", img);
+    cv::waitKey(0);
+}
+
+void tmp(int, void*) {
+    
+}
+
+void CameraController::threshHSV(bool morph) {
+    using namespace cv;
+    
+    int H_min = 0,
+        H_max = 256,
+        S_min = 0,
+        S_max = 256,
+        V_min = 0,
+        V_max = 256;
+    
+    namedWindow("Trackbars", 0);
+    
+    createTrackbar("H_min", "Trackbars", &H_min, H_max, tmp);
+    createTrackbar("H_max", "Trackbars", &H_max, H_max, tmp);
+    createTrackbar("S_min", "Trackbars", &S_min, H_max, tmp);
+    createTrackbar("S_max", "Trackbars", &S_max, H_max, tmp);
+    createTrackbar("V_min", "Trackbars", &V_min, H_max, tmp);
+    createTrackbar("V_max", "Trackbars", &V_max, H_max, tmp);
+    
+    while(ros::ok()) {
+        Mat img = lastImg.clone();
+        Mat imgHsv, imgRange;
+        
+        cvtColor(img, imgHsv, COLOR_BGR2HSV);
+        inRange(imgHsv, Scalar(H_min, S_min, V_min), Scalar(H_max, S_max, V_max), imgRange);
+        
+        if(morph) {
+            Mat erodeElem = getStructuringElement(MORPH_RECT, Size(3, 3));
+            Mat dilateElem = getStructuringElement(MORPH_RECT, Size(8, 8));
+            
+            erode(imgRange, imgRange, erodeElem);
+            erode(imgRange, imgRange, erodeElem);
+            
+            dilate(imgRange, imgRange, erodeElem);
+            dilate(imgRange, imgRange, erodeElem);
+        }
+        
+        imshow("Normal", img);
+        imshow("HSV", imgHsv);
+        imshow("HSV range", imgRange);
+        
+        
+        
+        waitKey(30);
+    }
 }
