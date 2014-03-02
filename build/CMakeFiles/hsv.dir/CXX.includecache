@@ -17,6 +17,8 @@ string
 -
 iostream
 -
+fstream
+-
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

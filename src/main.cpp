@@ -39,7 +39,7 @@ int main(int argc, char** argv)
             cout << "Altitude: " << NavdataController::getInstance().getNavdata().altd << "mm" << endl;
             break;
         case 8:
-            CameraController::getInstance().threshHSV(true);
+            CameraController::getInstance().threshHSV(false);
             break;
         case 9:
             CameraController::getInstance().findCircle();
