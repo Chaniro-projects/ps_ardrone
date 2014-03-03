@@ -64,6 +64,16 @@ int main(int argc, char** argv)
             break;
         }
 
+        if(continu) {
+            cout << "Menu" << endl
+                 << "1) HSV from video" << endl
+                 << "2) HSV from image" << endl
+                 << "3) Detection test from image" << endl
+                 << "4) Detection test from video" << endl
+                 << "5) Edit obj file" << endl
+                 << "6) Exit" << endl;
+            cin >> choix;
+        }
     }
 
     return 0;
@@ -104,6 +114,7 @@ void testDetectFromVideo() {
     CvCapture* capture = cvCaptureFromFile(imgFile.c_str());
     
     IplImage* frame = NULL;
+    bool continu = true;
     
     do {
         frame = cvQueryFrame(capture);
@@ -155,7 +166,7 @@ void testDetectFromVideo() {
                     ostringstream oss;
                     oss << "Center: (" << (int)(mc[i].x) << "," << (int)(mc[i].y) << ")   Size: " << (int)size;
                     
-                    putText(drawing, oss.str().c_str(), cv::Point(10,15), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255),1,8,false);
+                    putText(drawing, oss.str().c_str(), cv::Point(10,15), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
                 }
             }
             
@@ -164,13 +175,18 @@ void testDetectFromVideo() {
             imshow("Contour", drawing);
             
             
-            waitKey(25);
+            int key = waitKey(25);
+            
+            if(key == 27)
+                continu = false;
         }
     }
-    while(frame != NULL);
+    while(frame != NULL && continu);
     
     cvReleaseCapture(&capture);
     cvReleaseImage(&frame);
+    
+    destroyAllWindows();
 }
 
 void testDetectFromImg() {
