@@ -5,6 +5,9 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/bastien/ros/sandbox/ps_ardrone/src/hsv.cpp" "/home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/hsv.dir/src/hsv.cpp.o"
+  "/home/bastien/ros/sandbox/ps_ardrone/src/imageobject.cpp" "/home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/hsv.dir/src/imageobject.cpp.o"
+  "/home/bastien/ros/sandbox/ps_ardrone/src/objectdata.cpp" "/home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/hsv.dir/src/objectdata.cpp.o"
+  "/home/bastien/ros/sandbox/ps_ardrone/src/pugixml.cpp" "/home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles/hsv.dir/src/pugixml.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

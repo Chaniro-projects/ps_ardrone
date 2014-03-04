@@ -3,6 +3,8 @@
 
 CMakeFiles/hsv.dir/src/hsv.cpp.o
  /home/bastien/ros/sandbox/ps_ardrone/src/hsv.cpp
+ /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.h
+ /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.h
  /opt/ros/hydro/include/XmlRpcDecl.h
  /opt/ros/hydro/include/XmlRpcValue.h
  /opt/ros/hydro/include/opencv2/core/core.hpp
@@ -15,6 +17,8 @@ CMakeFiles/hsv.dir/src/hsv.cpp.o
  /opt/ros/hydro/include/opencv2/highgui/highgui_c.h
  /opt/ros/hydro/include/opencv2/imgproc/imgproc.hpp
  /opt/ros/hydro/include/opencv2/imgproc/types_c.h
+ /opt/ros/hydro/include/pugixml/pugiconfig.hpp
+ /opt/ros/hydro/include/pugixml/pugixml.hpp
  /opt/ros/hydro/include/ros/advertise_options.h
  /opt/ros/hydro/include/ros/advertise_service_options.h
  /opt/ros/hydro/include/ros/assert.h
@@ -68,3 +72,16 @@ CMakeFiles/hsv.dir/src/hsv.cpp.o
  /opt/ros/hydro/include/ros/wall_timer.h
  /opt/ros/hydro/include/ros/wall_timer_options.h
  /opt/ros/hydro/include/rosconsole/macros_generated.h
+CMakeFiles/hsv.dir/src/imageobject.cpp.o
+ /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.cpp
+ /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.h
+CMakeFiles/hsv.dir/src/objectdata.cpp.o
+ /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.h
+ /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.cpp
+ /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.h
+ /opt/ros/hydro/include/pugixml/pugiconfig.hpp
+ /opt/ros/hydro/include/pugixml/pugixml.hpp
+CMakeFiles/hsv.dir/src/pugixml.cpp.o
+ /home/bastien/ros/sandbox/ps_ardrone/src/pugixml.cpp
+ /opt/ros/hydro/include/pugixml/pugiconfig.hpp
+ /opt/ros/hydro/include/pugixml/pugixml.hpp

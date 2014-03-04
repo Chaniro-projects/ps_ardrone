@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "objectdata.h"
 
 using namespace std;
 using namespace cv;
@@ -29,20 +30,22 @@ int main(int argc, char** argv)
 {
     cout << "Starting HSV node" << endl;
     ros::init(argc, argv,"hsv_node");
-
-    cout << "Menu" << endl
-         << "1) HSV from video" << endl
-         << "2) HSV from image" << endl
-         << "3) Detection test from image" << endl
-         << "4) Detection test from video" << endl
-         << "5) Edit obj file" << endl
-         << "6) Exit" << endl;
     
     bool continu = true;
     int choix;
-    cin >> choix;
+    
     
     while(continu) {
+        cout << "Menu" << endl
+             << "1) HSV from video" << endl
+             << "2) HSV from image" << endl
+             << "3) Detection test from image" << endl
+             << "4) Detection test from video" << endl
+             << "5) Edit obj file" << endl
+             << "6) Show objects in objects.xml" << endl
+             << "7) Exit" << endl
+             << "92) Test" << endl;
+        cin >> choix;
         switch(choix) {
         case 1:
             hsvFromVideo();
@@ -60,19 +63,14 @@ int main(int argc, char** argv)
             editObjFile();
             break;
         case 6:
+            ObjectData::getInstance().showObjectsName();
+            break;
+        case 7:
             continu = false;
             break;
-        }
-
-        if(continu) {
-            cout << "Menu" << endl
-                 << "1) HSV from video" << endl
-                 << "2) HSV from image" << endl
-                 << "3) Detection test from image" << endl
-                 << "4) Detection test from video" << endl
-                 << "5) Edit obj file" << endl
-                 << "6) Exit" << endl;
-            cin >> choix;
+        case 92:
+            ObjectData::getInstance().test();
+            break;
         }
     }
 
@@ -80,7 +78,7 @@ int main(int argc, char** argv)
 }
 
 void testDetectFromVideo() {
-    string objFile, imgFile, line;
+    string objName, imgFile, line;
     bool morph = false;
     
     int H_min = 0,
@@ -90,26 +88,21 @@ void testDetectFromVideo() {
         V_min = 0,
         V_max = 256;
     
-    cout << "Obj file:";
-    cin >> objFile;
+    cout << "Object name:";
+    cin >> objName;
     cout << "Video:";
     cin >> imgFile;
     
-    ifstream f(objFile.c_str());
-            
-    getline (f, line);
-    getline (f, line);
-    H_min = toInt(line);
-    getline (f, line);
-    H_max = toInt(line);
-    getline (f, line);
-    S_min = toInt(line);
-    getline (f, line);
-    S_max = toInt(line);
-    getline (f, line);
-    V_min = toInt(line);
-    getline (f, line);
-    V_max = toInt(line);
+    ImageObject* obj = ObjectData::getInstance().get(objName);
+    
+    std::cout << "h_min:" << obj->h_min << std::endl;
+    
+    H_min = obj->h_min;
+    H_max = obj->h_max;
+    S_min = obj->s_min;
+    S_max = obj->s_max;
+    V_min = obj->v_min;
+    V_max = obj->v_max;
     
     CvCapture* capture = cvCaptureFromFile(imgFile.c_str());
     
@@ -341,21 +334,11 @@ void hsvFromImage() {
           go = false;
         else if (key == 115) {
             destroyAllWindows();
-            string name, fileName;
-            cout << "Object name: ";
+            string name;
+            cout << "Object name:";
             cin >> name;
             
-            ofstream file;
-            fileName = name + ".obj";
-            file.open(fileName.c_str());
-            file << name << endl;
-            file << H_min << endl;
-            file << H_max << endl;
-            file << S_min << endl;
-            file << S_max << endl;
-            file << V_min << endl;
-            file << V_max << endl;
-            file.close();
+            ObjectData::getInstance().save(name, H_min, H_max, S_min, S_max, V_min, V_max);
             cout << "Object saved in '" << name << ".obj'";
         }
         
@@ -389,6 +372,8 @@ void hsvFromVideo() {
     createTrackbar("V_min", "Trackbars", &V_min, H_max, tmp);
     createTrackbar("V_max", "Trackbars", &V_max, H_max, tmp);
     
+    bool go = true;
+    
     do {
         frame = cvQueryFrame(capture);
         
@@ -417,10 +402,21 @@ void hsvFromVideo() {
             
             
             
-            waitKey(30);
+            int key = waitKey(30);
+            if(key == 27)
+              go = false;
+            else if (key == 115) {
+                destroyAllWindows();
+                string name;
+                cout << "Object name:";
+                cin >> name;
+                
+                ObjectData::getInstance().save(name, H_min, H_max, S_min, S_max, V_min, V_max);
+                cout << "Object saved in '" << name << ".obj'";
+            }
         }
     }
-    while(ros::ok() && frame != NULL);
+    while(ros::ok() && frame != NULL && go);
     
     cvReleaseCapture(&capture);
     cvReleaseImage(&frame);

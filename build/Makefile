@@ -623,6 +623,30 @@ src/hsv.cpp.s:
 	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/hsv.cpp.s
 .PHONY : src/hsv.cpp.s
 
+src/imageobject.o: src/imageobject.cpp.o
+.PHONY : src/imageobject.o
+
+# target to build an object file
+src/imageobject.cpp.o:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/imageobject.cpp.o
+.PHONY : src/imageobject.cpp.o
+
+src/imageobject.i: src/imageobject.cpp.i
+.PHONY : src/imageobject.i
+
+# target to preprocess a source file
+src/imageobject.cpp.i:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/imageobject.cpp.i
+.PHONY : src/imageobject.cpp.i
+
+src/imageobject.s: src/imageobject.cpp.s
+.PHONY : src/imageobject.s
+
+# target to generate assembly for a file
+src/imageobject.cpp.s:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/imageobject.cpp.s
+.PHONY : src/imageobject.cpp.s
+
 src/land.o: src/land.cpp.o
 .PHONY : src/land.o
 
@@ -718,6 +742,54 @@ src/navdatacontroller.s: src/navdatacontroller.cpp.s
 src/navdatacontroller.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/navdatacontroller.cpp.s
 .PHONY : src/navdatacontroller.cpp.s
+
+src/objectdata.o: src/objectdata.cpp.o
+.PHONY : src/objectdata.o
+
+# target to build an object file
+src/objectdata.cpp.o:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/objectdata.cpp.o
+.PHONY : src/objectdata.cpp.o
+
+src/objectdata.i: src/objectdata.cpp.i
+.PHONY : src/objectdata.i
+
+# target to preprocess a source file
+src/objectdata.cpp.i:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/objectdata.cpp.i
+.PHONY : src/objectdata.cpp.i
+
+src/objectdata.s: src/objectdata.cpp.s
+.PHONY : src/objectdata.s
+
+# target to generate assembly for a file
+src/objectdata.cpp.s:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/objectdata.cpp.s
+.PHONY : src/objectdata.cpp.s
+
+src/pugixml.o: src/pugixml.cpp.o
+.PHONY : src/pugixml.o
+
+# target to build an object file
+src/pugixml.cpp.o:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/pugixml.cpp.o
+.PHONY : src/pugixml.cpp.o
+
+src/pugixml.i: src/pugixml.cpp.i
+.PHONY : src/pugixml.i
+
+# target to preprocess a source file
+src/pugixml.cpp.i:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/pugixml.cpp.i
+.PHONY : src/pugixml.cpp.i
+
+src/pugixml.s: src/pugixml.cpp.s
+.PHONY : src/pugixml.s
+
+# target to generate assembly for a file
+src/pugixml.cpp.s:
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/pugixml.cpp.s
+.PHONY : src/pugixml.cpp.s
 
 src/reset.o: src/reset.cpp.o
 .PHONY : src/reset.o
@@ -822,6 +894,9 @@ help:
 	@echo "... src/hsv.o"
 	@echo "... src/hsv.i"
 	@echo "... src/hsv.s"
+	@echo "... src/imageobject.o"
+	@echo "... src/imageobject.i"
+	@echo "... src/imageobject.s"
 	@echo "... src/land.o"
 	@echo "... src/land.i"
 	@echo "... src/land.s"
@@ -834,6 +909,12 @@ help:
 	@echo "... src/navdatacontroller.o"
 	@echo "... src/navdatacontroller.i"
 	@echo "... src/navdatacontroller.s"
+	@echo "... src/objectdata.o"
+	@echo "... src/objectdata.i"
+	@echo "... src/objectdata.s"
+	@echo "... src/pugixml.o"
+	@echo "... src/pugixml.i"
+	@echo "... src/pugixml.s"
 	@echo "... src/reset.o"
 	@echo "... src/reset.i"
 	@echo "... src/reset.s"

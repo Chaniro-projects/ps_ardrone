@@ -131,14 +131,266 @@ CMakeFiles/hsv.dir/src/hsv.cpp.o.provides: CMakeFiles/hsv.dir/src/hsv.cpp.o.requ
 
 CMakeFiles/hsv.dir/src/hsv.cpp.o.provides.build: CMakeFiles/hsv.dir/src/hsv.cpp.o
 
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: CMakeFiles/hsv.dir/flags.make
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: ../src/objectdata.cpp
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: ../manifest.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/catkin/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/console_bridge/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/cpp_common/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rostime/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/roscpp_traits/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/roscpp_serialization/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/genmsg/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/genpy/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/message_runtime/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/std_msgs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/gencpp/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/genlisp/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/message_generation/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosbuild/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosconsole/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/xmlrpcpp/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/roscpp/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosgraph/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rospack/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/roslib/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rospy/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/message_filters/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/class_loader/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/pluginlib/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/geometry_msgs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/sensor_msgs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/image_transport/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/std_srvs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosclean/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosmaster/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosout/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosparam/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/roslaunch/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosbag_storage/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/topic_tools/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosbag/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rostopic/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosnode/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosmsg/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosservice/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/roswtf/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/actionlib_msgs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/tf2_msgs/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/tf2/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rosunit/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/rostest/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/actionlib/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/tf2_py/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/tf2_ros/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/tf/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/camera_calibration_parsers/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/camera_info_manager/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/manifest.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/opencv2/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /opt/ros/hydro/share/cv_bridge/package.xml
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/msg_gen/generated
+CMakeFiles/hsv.dir/src/objectdata.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/hsv.dir/src/objectdata.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/hsv.dir/src/objectdata.cpp.o -c /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.cpp
+
+CMakeFiles/hsv.dir/src/objectdata.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hsv.dir/src/objectdata.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.cpp > CMakeFiles/hsv.dir/src/objectdata.cpp.i
+
+CMakeFiles/hsv.dir/src/objectdata.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hsv.dir/src/objectdata.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.cpp -o CMakeFiles/hsv.dir/src/objectdata.cpp.s
+
+CMakeFiles/hsv.dir/src/objectdata.cpp.o.requires:
+.PHONY : CMakeFiles/hsv.dir/src/objectdata.cpp.o.requires
+
+CMakeFiles/hsv.dir/src/objectdata.cpp.o.provides: CMakeFiles/hsv.dir/src/objectdata.cpp.o.requires
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/objectdata.cpp.o.provides.build
+.PHONY : CMakeFiles/hsv.dir/src/objectdata.cpp.o.provides
+
+CMakeFiles/hsv.dir/src/objectdata.cpp.o.provides.build: CMakeFiles/hsv.dir/src/objectdata.cpp.o
+
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: CMakeFiles/hsv.dir/flags.make
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: ../src/pugixml.cpp
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: ../manifest.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/catkin/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/console_bridge/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/cpp_common/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rostime/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/roscpp_traits/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/roscpp_serialization/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/genmsg/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/genpy/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/message_runtime/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/std_msgs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/gencpp/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/genlisp/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/message_generation/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosbuild/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosconsole/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/xmlrpcpp/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/roscpp/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosgraph/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rospack/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/roslib/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rospy/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/message_filters/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/class_loader/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/pluginlib/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/geometry_msgs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/sensor_msgs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/image_transport/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/std_srvs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosclean/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosmaster/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosout/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosparam/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/roslaunch/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosbag_storage/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/topic_tools/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosbag/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rostopic/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosnode/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosmsg/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosservice/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/roswtf/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/actionlib_msgs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/tf2_msgs/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/tf2/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rosunit/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/rostest/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/actionlib/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/tf2_py/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/tf2_ros/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/tf/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/camera_calibration_parsers/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/camera_info_manager/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/manifest.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/opencv2/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /opt/ros/hydro/share/cv_bridge/package.xml
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/msg_gen/generated
+CMakeFiles/hsv.dir/src/pugixml.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/hsv.dir/src/pugixml.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/hsv.dir/src/pugixml.cpp.o -c /home/bastien/ros/sandbox/ps_ardrone/src/pugixml.cpp
+
+CMakeFiles/hsv.dir/src/pugixml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hsv.dir/src/pugixml.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/bastien/ros/sandbox/ps_ardrone/src/pugixml.cpp > CMakeFiles/hsv.dir/src/pugixml.cpp.i
+
+CMakeFiles/hsv.dir/src/pugixml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hsv.dir/src/pugixml.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/bastien/ros/sandbox/ps_ardrone/src/pugixml.cpp -o CMakeFiles/hsv.dir/src/pugixml.cpp.s
+
+CMakeFiles/hsv.dir/src/pugixml.cpp.o.requires:
+.PHONY : CMakeFiles/hsv.dir/src/pugixml.cpp.o.requires
+
+CMakeFiles/hsv.dir/src/pugixml.cpp.o.provides: CMakeFiles/hsv.dir/src/pugixml.cpp.o.requires
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/pugixml.cpp.o.provides.build
+.PHONY : CMakeFiles/hsv.dir/src/pugixml.cpp.o.provides
+
+CMakeFiles/hsv.dir/src/pugixml.cpp.o.provides.build: CMakeFiles/hsv.dir/src/pugixml.cpp.o
+
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: CMakeFiles/hsv.dir/flags.make
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: ../src/imageobject.cpp
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: ../manifest.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/catkin/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/console_bridge/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/cpp_common/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rostime/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/roscpp_traits/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/roscpp_serialization/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/genmsg/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/genpy/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/message_runtime/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/std_msgs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/gencpp/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/genlisp/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/message_generation/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosbuild/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosconsole/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosgraph_msgs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/xmlrpcpp/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/roscpp/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosgraph/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rospack/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/roslib/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rospy/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/message_filters/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/class_loader/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/pluginlib/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/geometry_msgs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/sensor_msgs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/image_transport/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/std_srvs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosclean/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosmaster/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosout/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosparam/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/roslaunch/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosbag_storage/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/topic_tools/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosbag/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rostopic/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosnode/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosmsg/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosservice/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/roswtf/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/actionlib_msgs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/tf2_msgs/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/tf2/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rosunit/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/rostest/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/actionlib/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/tf2_py/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/tf2_ros/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/tf/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/camera_calibration_parsers/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/camera_info_manager/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/manifest.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/opencv2/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /opt/ros/hydro/share/cv_bridge/package.xml
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/msg_gen/generated
+CMakeFiles/hsv.dir/src/imageobject.cpp.o: /home/bastien/ros/sandbox/ardrone_autonomy/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bastien/ros/sandbox/ps_ardrone/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/hsv.dir/src/imageobject.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/hsv.dir/src/imageobject.cpp.o -c /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.cpp
+
+CMakeFiles/hsv.dir/src/imageobject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hsv.dir/src/imageobject.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.cpp > CMakeFiles/hsv.dir/src/imageobject.cpp.i
+
+CMakeFiles/hsv.dir/src/imageobject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hsv.dir/src/imageobject.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.cpp -o CMakeFiles/hsv.dir/src/imageobject.cpp.s
+
+CMakeFiles/hsv.dir/src/imageobject.cpp.o.requires:
+.PHONY : CMakeFiles/hsv.dir/src/imageobject.cpp.o.requires
+
+CMakeFiles/hsv.dir/src/imageobject.cpp.o.provides: CMakeFiles/hsv.dir/src/imageobject.cpp.o.requires
+	$(MAKE) -f CMakeFiles/hsv.dir/build.make CMakeFiles/hsv.dir/src/imageobject.cpp.o.provides.build
+.PHONY : CMakeFiles/hsv.dir/src/imageobject.cpp.o.provides
+
+CMakeFiles/hsv.dir/src/imageobject.cpp.o.provides.build: CMakeFiles/hsv.dir/src/imageobject.cpp.o
+
 # Object files for target hsv
 hsv_OBJECTS = \
-"CMakeFiles/hsv.dir/src/hsv.cpp.o"
+"CMakeFiles/hsv.dir/src/hsv.cpp.o" \
+"CMakeFiles/hsv.dir/src/objectdata.cpp.o" \
+"CMakeFiles/hsv.dir/src/pugixml.cpp.o" \
+"CMakeFiles/hsv.dir/src/imageobject.cpp.o"
 
 # External object files for target hsv
 hsv_EXTERNAL_OBJECTS =
 
 ../bin/hsv: CMakeFiles/hsv.dir/src/hsv.cpp.o
+../bin/hsv: CMakeFiles/hsv.dir/src/objectdata.cpp.o
+../bin/hsv: CMakeFiles/hsv.dir/src/pugixml.cpp.o
+../bin/hsv: CMakeFiles/hsv.dir/src/imageobject.cpp.o
 ../bin/hsv: CMakeFiles/hsv.dir/build.make
 ../bin/hsv: CMakeFiles/hsv.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/hsv"
@@ -149,6 +401,9 @@ CMakeFiles/hsv.dir/build: ../bin/hsv
 .PHONY : CMakeFiles/hsv.dir/build
 
 CMakeFiles/hsv.dir/requires: CMakeFiles/hsv.dir/src/hsv.cpp.o.requires
+CMakeFiles/hsv.dir/requires: CMakeFiles/hsv.dir/src/objectdata.cpp.o.requires
+CMakeFiles/hsv.dir/requires: CMakeFiles/hsv.dir/src/pugixml.cpp.o.requires
+CMakeFiles/hsv.dir/requires: CMakeFiles/hsv.dir/src/imageobject.cpp.o.requires
 .PHONY : CMakeFiles/hsv.dir/requires
 
 CMakeFiles/hsv.dir/clean:
