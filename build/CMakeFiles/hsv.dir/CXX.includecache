@@ -27,8 +27,6 @@ objectdata.h
 /home/bastien/ros/sandbox/ps_ardrone/src/imageobject.h
 string
 -
-iostream
--
 
 /home/bastien/ros/sandbox/ps_ardrone/src/objectdata.h
 iostream
@@ -39,10 +37,10 @@ fstream
 -
 vector
 -
-imageobject.h
-/home/bastien/ros/sandbox/ps_ardrone/src/imageobject.h
 sstream
 -
+imageobject.h
+/home/bastien/ros/sandbox/ps_ardrone/src/imageobject.h
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

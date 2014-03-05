@@ -147,7 +147,7 @@ void testDetectFromVideo() {
             vector<Point2f> mc( contours.size() );
               for( int i = 0; i < contours.size(); i++ )
                  { if(contours[i].size() > 15) mc[i] = Point2f( mu[i].m10/mu[i].m00 , mu[i].m01/mu[i].m00 ); }
-              
+                    
             Mat drawing = Mat::zeros( imgRange.size(), CV_8UC3 );
             for( int i = 0; i< contours.size(); i++ ) {
                 double size = contourArea(contours[i]);
@@ -158,8 +158,11 @@ void testDetectFromVideo() {
                     
                     ostringstream oss;
                     oss << "Center: (" << (int)(mc[i].x) << "," << (int)(mc[i].y) << ")   Size: " << (int)size;
+                    ostringstream oss2;
+                    oss2 << "Distance: " << (floor(obj->getDistance(size)*100)/100);
                     
                     putText(drawing, oss.str().c_str(), cv::Point(10,15), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
+                    putText(drawing, oss2.str().c_str(), cv::Point(10,29), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
                 }
             }
             
@@ -183,7 +186,7 @@ void testDetectFromVideo() {
 }
 
 void testDetectFromImg() {
-    string objFile, imgFile, line;
+    string objName, imgFile;
     bool morph = false;
     
     int H_min = 0,
@@ -193,35 +196,32 @@ void testDetectFromImg() {
         V_min = 0,
         V_max = 256;
     
-    cout << "Obj file:";
-    cin >> objFile;
+    cout << "Object name:";
+    cin >> objName;
+    
+    ImageObject* obj = ObjectData::getInstance().get(objName);
+    
+    H_min = obj->h_min;
+    H_max = obj->h_max;
+    S_min = obj->s_min;
+    S_max = obj->s_max;
+    V_min = obj->v_min;
+    V_max = obj->v_max;
+    
     cout << "Image:";
     cin >> imgFile;
     
     Mat img;
     img = imread(imgFile, CV_LOAD_IMAGE_COLOR);
     
-    ifstream f(objFile.c_str());
-            
-    getline (f, line);
-    getline (f, line);
-    H_min = toInt(line);
-    getline (f, line);
-    H_max = toInt(line);
-    getline (f, line);
-    S_min = toInt(line);
-    getline (f, line);
-    S_max = toInt(line);
-    getline (f, line);
-    V_min = toInt(line);
-    getline (f, line);
-    V_max = toInt(line);
-    
     resize(img, img, Size(600, img.rows*600/img.cols));
     Mat imgHsv, imgRange;
     
     cvtColor(img, imgHsv, COLOR_BGR2HSV);
     inRange(imgHsv, Scalar(H_min, S_min, V_min), Scalar(H_max, S_max, V_max), imgRange);
+    
+    int coefB = (obj->d2.size - (obj->d2.distance*obj->d1.size))/(obj->d1.distance - obj->d2.distance);
+    int coefA = (obj->d2.size - coefB)/obj->d2.distance;
     
     if(morph) {
         Mat erodeElem = getStructuringElement(MORPH_RECT, Size(3, 3));
@@ -238,12 +238,13 @@ void testDetectFromImg() {
     
     vector<vector<Point> > contours;
     vector<Vec4i> hierarchy;
-    RNG rng(12345);
     
-    findContours(imgRange, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+    Mat imgRange2 = imgRange.clone();
     
-    //Moments   
-    vector<Moments> mu(contours.size() );
+    findContours(imgRange2, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+    
+    //Moments
+    vector<Moments> mu(contours.size());
     for( int i = 0; i < contours.size(); i++ )
     { if(contours[i].size() > 15) mu[i] = moments( contours[i], false ); }
     
@@ -259,8 +260,13 @@ void testDetectFromImg() {
             Scalar color = Scalar(255, 255, 255);
             drawContours( drawing, contours, i, color, 2, 8, hierarchy, 0, Point() );
             circle( drawing, mc[i], 4, color, -1, 8, 0 );
-            cout << "Shape center:(" << mc[i].x << "," << mc[i].y << ")" << endl;
-            cout << "Size: " << size << endl;
+            ostringstream oss;
+            oss << "Center: (" << (int)(mc[i].x) << "," << (int)(mc[i].y) << ")   Size: " << (int)size;
+            ostringstream oss2;
+            oss2 << "Distance: " << (floor((obj->getDistance(size))*100)/100);
+            
+            putText(drawing, oss.str().c_str(), cv::Point(10,15), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
+            putText(drawing, oss2.str().c_str(), cv::Point(10,29), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
         }
     }
     

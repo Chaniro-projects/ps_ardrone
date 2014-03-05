@@ -34,6 +34,6 @@ rosbuild_add_executable(takeoff src/takeoff.cpp)
 rosbuild_add_executable(reset src/reset.cpp)
 rosbuild_add_executable(fly src/fly.cpp)
 rosbuild_add_executable(main src/main.cpp src/ardrone.cpp src/communicationcontroller.cpp src/navdatacontroller.cpp src/cameracontroller.cpp)
-rosbuild_add_executable(hsv src/hsv.cpp src/objectdata.cpp src/pugixml.cpp src/imageobject.cpp)
+rosbuild_add_executable(hsv src/hsv.cpp src/objectdata.cpp src/pugixml.cpp)
 
 rosbuild_link_boost(main thread)

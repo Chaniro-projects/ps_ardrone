@@ -17,6 +17,18 @@ ObjectData::ObjectData()
         object.s_max = toInt(obj.child("smax").child_value());
         object.v_min = toInt(obj.child("vmin").child_value());
         object.v_max = toInt(obj.child("vmax").child_value());
+        
+        ImageObject::Distance d1, d2;
+        xml_node dist = obj.child("dist");
+        d1.distance = dist.attribute("at").as_float();
+        d1.size = dist.text().as_int();
+        
+        dist = dist.next_sibling("dist");
+        d2.distance = dist.attribute("at").as_float();
+        d2.size = dist.text().as_int();
+        
+        object.d1 = d1;
+        object.d2 = d2;
         objs.push_back(object);
     }
 }

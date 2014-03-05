@@ -5,14 +5,16 @@
 #include <pugixml/pugixml.hpp>
 #include <fstream>
 #include <vector>
-#include "imageobject.h"
 #include <sstream>
+#include "imageobject.h"
+
 
 using namespace pugi;
 
 class ObjectData
 {
 public:
+
     ObjectData();
     static ObjectData& getInstance();
     void showObjectsName();

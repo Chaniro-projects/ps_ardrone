@@ -2,12 +2,16 @@
 #define IMAGEOBJECT_H
 
 #include <string>
-#include <iostream>
 
 class ImageObject
 {
 public:
     ImageObject();
+    
+    struct Distance {
+        float distance; //meter
+        int size;       //pixel
+    };
     
     std::string name;
     int h_min;
@@ -16,6 +20,10 @@ public:
     int s_max;
     int v_min;
     int v_max;
+    Distance d1;
+    Distance d2;
+    
+    float getDistance(int size);
 };
 
 #endif // IMAGEOBJECT_H
