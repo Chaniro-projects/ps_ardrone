@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<objects>
+	<object>
+		<name>green_circle</name>
+		<hmin>41</hmin>
+		<hmax>79</hmax>
+		<smin>232</smin>
+		<smax>256</smax>
+		<vmin>243</vmin>
+		<vmax>256</vmax>
+		<dist at="1">3925</dist>
+		<dist at="5">425</dist>
+	</object>
+</objects>
