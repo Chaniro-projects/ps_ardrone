@@ -11,4 +11,15 @@
 		<dist at="1">3925</dist>
 		<dist at="5">425</dist>
 	</object>
+	<object>
+		<name>bowl</name>
+		<hmin>2</hmin>
+		<hmax>20</hmax>
+		<smin>151</smin>
+		<smax>207</smax>
+		<vmin>211</vmin>
+		<vmax>256</vmax>
+		<dist at="1">1000</dist>
+		<dist at="5"></dist>
+	</object>
 </objects>

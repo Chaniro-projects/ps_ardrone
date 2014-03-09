@@ -1,3 +1,4 @@
+set(CMAKE_AUTOMOC ON)
 cmake_minimum_required(VERSION 2.8.3)
 project(ps_ardrone)
 
@@ -13,6 +14,19 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(OpenCV REQUIRED)
+find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui)
+
+include(${QT_USE_FILE})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+file(GLOB QT_FORMS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.ui)
+file(GLOB QT_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} resources/*.qrc)
+file(GLOB_RECURSE QT_MOC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINKS *.hpp)
+
+QT4_ADD_RESOURCES(QT_RESOURCES_CPP ${QT_RESOURCES})
+QT4_WRAP_CPP(QT_MOC_HPP ${QT_MOC})
+QT4_WRAP_UI(QT_FORMS_HPP ${QT_FORMS})
+
+file(GLOB_RECURSE QT_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINKS *.cpp)
 
 catkin_package(
 )
@@ -22,7 +36,7 @@ include_directories(
 )
 
 add_executable(main src/main.cpp src/ardrone.cpp src/communicationcontroller.cpp src/navdatacontroller.cpp src/cameracontroller.cpp src/objectdetection.cpp src/pugixml.cpp src/imageobject.cpp)
-target_link_libraries(main ${catkin_LIBRARIES})
+target_link_libraries(main ${QT_LIBRARIES} ${catkin_LIBRARIES})
 
 add_executable(hsv src/hsv.cpp src/objectdetection.cpp src/pugixml.cpp src/imageobject.cpp src/cameracontroller.cpp)
-target_link_libraries(hsv ${catkin_LIBRARIES})
+target_link_libraries(hsv ${QT_LIBRARIES} ${catkin_LIBRARIES})

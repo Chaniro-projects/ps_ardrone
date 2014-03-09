@@ -7,7 +7,7 @@
 #include <sstream>
 #include "objectdetection.h"
 #include "cameracontroller.h"
-
+//#include "detectiontool.h"
 
 using namespace std;
 using namespace cv;
@@ -18,6 +18,7 @@ void hsvFromDrone();
 void editObjFile();
 void testDetectFromImg();
 void testDetectFromVideo();
+void testDetectFromDrone();
 
 int toInt(string str) {
     std::istringstream iss(str.c_str());
@@ -29,6 +30,14 @@ int toInt(string str) {
 
 int main(int argc, char** argv)
 {
+    /*QApplication app(argc, argv);
+    DetectionTool dt(&app);
+    return dt.go();*/
+    
+    ros::init(argc, argv,"hsv_node");
+    
+    CameraController::getInstance().start();
+    
     cout << "Starting HSV node" << endl;
     ros::init(argc, argv,"hsv_node");
     
@@ -43,8 +52,9 @@ int main(int argc, char** argv)
              << "3) HSV from AR.Drone camera" << endl
              << "4) Detection test from image" << endl
              << "5) Detection test from video" << endl
-             << "6) Show objects in objects.xml" << endl
-             << "7) Exit" << endl
+             << "6) Detection test from AR.Drone" << endl
+             << "7) Show objects in objects.xml" << endl
+             << "8) Exit" << endl
              << "42) Test" << endl;
         cin >> choix;
         switch(choix) {
@@ -54,6 +64,9 @@ int main(int argc, char** argv)
         case 2:
             hsvFromImage();
             break;
+        case 3:
+            hsvFromDrone();
+            break;
         case 4:
             testDetectFromImg();
             break;
@@ -61,9 +74,12 @@ int main(int argc, char** argv)
             testDetectFromVideo();
             break;
         case 6:
-            ObjectDetection::getInstance().showObjectsName();
+            testDetectFromDrone();
             break;
         case 7:
+            ObjectDetection::getInstance().showObjectsName();
+            break;
+        case 8:
             continu = false;
             break;
         case 42:
@@ -75,8 +91,41 @@ int main(int argc, char** argv)
     return 0;
 }
 
+void testDetectFromDrone() {
+    string objName;
+    
+    cout << "Object name:";
+    cin >> objName;
+    
+    bool continu = true;
+    
+    do {
+        Mat img(CameraController::getInstance().getImage());
+        Mat black(Mat::zeros(400, img.rows*400/img.cols, CV_8UC3));
+        
+        ObjectDetection::DetectionResult res = ObjectDetection::getInstance().detectObject(img, objName, false, 50, 400);
+        
+        if(res.detected)
+            imshow("Contour", *res.imgRange);
+        else
+            imshow("Contour", black);
+        
+        imshow("Normal", img);
+        int key = waitKey(25);
+        if(key == 27)
+            continu = false;
+        
+        if(res.detected)
+            delete res.imgRange;
+    }
+    while(continu);
+    
+    destroyWindow("Contour");
+    destroyWindow("Normal");
+}
+
 void hsvFromDrone() {
-    CameraController::getInstance().start();
+    //CameraController::getInstance().start();
     
     bool morph = false;
     
@@ -97,7 +146,7 @@ void hsvFromDrone() {
     createTrackbar("V_max", "Trackbars", &V_max, H_max, NULL);
     
     bool go = true;
-    
+    std::cout << "go" << std::endl;
     do {
         Mat img(CameraController::getInstance().getImage());
         resize(img, img, Size(400, img.rows*400/img.cols));
@@ -352,3 +401,5 @@ void hsvFromVideo() {
     cvReleaseCapture(&capture);
     cvReleaseImage(&frame);
 }
+
+

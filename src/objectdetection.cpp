@@ -3,7 +3,7 @@ ObjectDetection* ObjectDetection::_od = NULL;
 
 ObjectDetection::ObjectDetection()
 {
-    stream = new std::ifstream("objects.xml");
+    stream = new std::ifstream(PATH_PKG"object/objects.xml");
     doc = new xml_document();
     doc->load(*(stream));
     
@@ -58,6 +58,11 @@ ImageObject *ObjectDetection::get(std::string str) {
     return 0;
 }
 
+bool ObjectDetection::exist(std::string str)
+{
+    return get(str) != 0;
+}
+
 void ObjectDetection::save(std::string name, int hmin, int hmax, int smin, int smax, int vmin, int vmax)
 {
     bool exist = false;
@@ -65,8 +70,10 @@ void ObjectDetection::save(std::string name, int hmin, int hmax, int smin, int s
         if(name == objs.at(i).name)
             exist = true;
     
+    xml_node obj;
+     
     if(exist) {
-        xml_node obj;
+       
         for(obj = doc->child("objects").child("object"); obj; obj = obj.next_sibling())
             if(obj.child("name").child_value() == name)
                 break;
@@ -79,7 +86,7 @@ void ObjectDetection::save(std::string name, int hmin, int hmax, int smin, int s
         obj.child("vmax").text().set(vmax);
     }
     else {
-        xml_node obj = doc->child("objects").append_child("object");
+        obj = doc->child("objects").append_child("object");
         obj.append_child("name").text().set(name.c_str());
         obj.append_child("hmin").text().set(hmin);
         obj.append_child("hmax").text().set(hmax);
@@ -89,7 +96,7 @@ void ObjectDetection::save(std::string name, int hmin, int hmax, int smin, int s
         obj.append_child("vmax").text().set(vmax);
     }
     
-    doc->save_file("objects.xml");
+    doc->save_file(PATH_PKG"object/objects.xml");
 }
 
 ObjectDetection::DetectionResult& ObjectDetection::detectObject(Mat &img, std::string objectName, bool morph, int minSize, int resizeWidth)

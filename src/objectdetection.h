@@ -9,6 +9,7 @@
 #include "imageobject.h"
 #include <opencv2/imgproc/imgproc.hpp>
 #include <string>
+#include "const.h"
 
 
 using namespace pugi;
@@ -32,6 +33,7 @@ public:
     void showObjectsName();
     ImageObject* get(int i);
     ImageObject* get(std::string str);
+    bool exist(std::string str);
     void save(std::string name, int hmin, int hmax, int smin, int smax, int vmin, int vmax);
     DetectionResult& detectObject(Mat& img, std::string objectName, bool morph = false, int minSize = 50, int resizeWidth = -1);
     void test();
