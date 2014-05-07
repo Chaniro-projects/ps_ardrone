@@ -2,11 +2,14 @@
 CommunicationController* CommunicationController::_cc = NULL;
 
 CommunicationController::CommunicationController()
-{}
+{
+    pub_twist = node_twist.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
+}
 
 CommunicationController& CommunicationController::getInstance() {
-    if(CommunicationController::_cc == NULL)
+    if(CommunicationController::_cc == NULL) {
         CommunicationController::_cc = new CommunicationController();
+    }
     return *CommunicationController::_cc;
 }
 
@@ -34,17 +37,15 @@ void CommunicationController::sendEmptyMsgRepeated(std::string to, int refreshRa
     double time_start=(double)ros::Time::now().toSec();
 
     try {
-        while (ros::ok()) {
-            while ((double)ros::Time::now().toSec()< time_start+sec){
-                boost::this_thread::interruption_point();
-                pub_empty.publish(emp_msg);
-                ros::spinOnce();
-                loop_rate.sleep();
-            }
-            if(verbose)
-                std::cout << "Done {" << to << "}" << std::endl;
-            break;
+        while ((double)ros::Time::now().toSec()< time_start+sec && ros::ok()){
+            boost::this_thread::interruption_point();
+            pub_empty.publish(emp_msg);
+            ros::spinOnce();
+            loop_rate.sleep();
         }
+        if(verbose)
+            std::cout << "Done {" << to << "}" << std::endl;
+        
     }
     catch(boost::thread_interrupted&) {
         if(verbose)
@@ -61,11 +62,7 @@ boost::thread* CommunicationController::sendAsyncEmptyMsgRepeated(std::string to
 }
 
 void CommunicationController::sendTwistMsg(std::string to, geometry_msgs::Twist twist_msg) {
-    ros::NodeHandle node;
-    ros::Publisher pub;
-
-    pub = node.advertise<geometry_msgs::Twist>(to, 1);
-    pub.publish(twist_msg);
+    pub_twist.publish(twist_msg);
 }
 
 void CommunicationController::sendTwistMsg(std::string to, float value, eType type) {
@@ -94,17 +91,14 @@ void CommunicationController::sendTwistMsgRepeated(std::string to, geometry_msgs
     double time_start=(double)ros::Time::now().toSec();
 
     try {
-        while (ros::ok()) {
-            while ((double)ros::Time::now().toSec()< time_start+sec){
-                boost::this_thread::interruption_point();
-                pub.publish(twist_msg);
-                ros::spinOnce();
-                loop_rate.sleep();
-            }
-            if(verbose)
-                std::cout << "Done {" << to << "}" << std::endl;
-            break;
+            while ((double)ros::Time::now().toSec()< time_start+sec && ros::ok()){
+            boost::this_thread::interruption_point();
+            pub.publish(twist_msg);
+            ros::spinOnce();
+            loop_rate.sleep();
         }
+        if(verbose)
+            std::cout << "Done {" << to << "}" << std::endl;
     }
     catch(boost::thread_interrupted&) {
         if(verbose)

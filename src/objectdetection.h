@@ -36,6 +36,7 @@ public:
     bool exist(std::string str);
     void save(std::string name, int hmin, int hmax, int smin, int smax, int vmin, int vmax);
     DetectionResult& detectObject(Mat& img, std::string objectName, bool morph = false, int minSize = 50, int resizeWidth = -1);
+    DetectionResult& detectCircle(const Mat &img);
     void test();
     
 private:

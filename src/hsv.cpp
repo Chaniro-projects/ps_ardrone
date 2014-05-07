@@ -19,6 +19,7 @@ void editObjFile();
 void testDetectFromImg();
 void testDetectFromVideo();
 void testDetectFromDrone();
+void testCircleDetection();
 
 int toInt(string str) {
     std::istringstream iss(str.c_str());
@@ -53,8 +54,9 @@ int main(int argc, char** argv)
              << "4) Detection test from image" << endl
              << "5) Detection test from video" << endl
              << "6) Detection test from AR.Drone" << endl
-             << "7) Show objects in objects.xml" << endl
-             << "8) Exit" << endl
+             << "7) Circle detection" << endl
+             << "8) Show objects in objects.xml" << endl
+             << "9) Exit" << endl
              << "42) Test" << endl;
         cin >> choix;
         switch(choix) {
@@ -77,9 +79,12 @@ int main(int argc, char** argv)
             testDetectFromDrone();
             break;
         case 7:
-            ObjectDetection::getInstance().showObjectsName();
+            testCircleDetection();
             break;
         case 8:
+            ObjectDetection::getInstance().showObjectsName();
+            break;
+        case 9:
             continu = false;
             break;
         case 42:
@@ -89,6 +94,35 @@ int main(int argc, char** argv)
     }
 
     return 0;
+}
+
+
+void testCircleDetection() {
+    
+    bool continu = true;
+    
+    do {
+        
+        Mat img(CameraController::getInstance().getImage());
+        Mat black(Mat::zeros(400, img.rows*400/img.cols, CV_8UC3));
+        
+        ObjectDetection::DetectionResult res = ObjectDetection::getInstance().detectCircle(img);
+        
+        std::cout << res.centerX << ":" << res.centerY << "   " << res.size << std::endl;
+        
+        imshow("Contour", *res.imgRange);
+        
+        imshow("Normal", img);
+        int key = waitKey(25);
+        if(key == 27)
+            continu = false;
+        
+        delete res.imgRange;
+    }
+    while(continu);
+    
+    destroyWindow("Contour");
+    destroyWindow("Normal");
 }
 
 void testDetectFromDrone() {
@@ -103,7 +137,7 @@ void testDetectFromDrone() {
         Mat img(CameraController::getInstance().getImage());
         Mat black(Mat::zeros(400, img.rows*400/img.cols, CV_8UC3));
         
-        ObjectDetection::DetectionResult res = ObjectDetection::getInstance().detectObject(img, objName, false, 50, 400);
+        ObjectDetection::DetectionResult res = ObjectDetection::getInstance().detectObject(img, objName, true, 50, 400);
         
         if(res.detected)
             imshow("Contour", *res.imgRange);
@@ -193,8 +227,12 @@ void testDetectFromVideo() {
     cin >> objName;
     cout << "Video:";
     cin >> imgFile;
+    std::string str = PATH_PKG;
+    str += "object/";
+    str += imgFile.c_str();
     
-    CvCapture* capture = cvCaptureFromFile(imgFile.c_str());
+    std::cout << str << std::endl;
+    CvCapture* capture = cvCaptureFromFile(str.c_str());
     
     IplImage* frame = NULL;
     bool continu = true;
@@ -236,8 +274,10 @@ void testDetectFromImg() {
     
     cout << "Image:";
     cin >> imgFile;
-    
-    Mat img = imread(imgFile);
+    std::string path = PATH_PKG;
+    path += "object/";
+    path += imgFile;
+    Mat img = imread(path);
     
     ObjectDetection::DetectionResult res = ObjectDetection::getInstance().detectObject(img, objName);
     
@@ -262,7 +302,12 @@ void hsvFromImage() {
     cin >> fileName;
     
     Mat source;
-    source = imread(fileName, CV_LOAD_IMAGE_COLOR);
+    
+    std::string path = PATH_PKG;
+    path += "object/";
+    path += fileName;
+    
+    source = imread(path, CV_LOAD_IMAGE_COLOR);
     
     bool morph = false;
     

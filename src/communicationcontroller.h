@@ -51,7 +51,8 @@ private:
     //Singleton
     static CommunicationController* _cc;
 
-
+    ros::NodeHandle node_twist;
+    ros::Publisher pub_twist;
 };
 
 

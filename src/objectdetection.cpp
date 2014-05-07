@@ -101,8 +101,8 @@ void ObjectDetection::save(std::string name, int hmin, int hmax, int smin, int s
 
 ObjectDetection::DetectionResult& ObjectDetection::detectObject(Mat &img, std::string objectName, bool morph, int minSize, int resizeWidth)
 {
-    DetectionResult res;
-    res.detected = false;
+    DetectionResult *res = new DetectionResult;
+    res->detected = false;
     ImageObject* obj = get(objectName);
     
     if(resizeWidth > 0) 
@@ -113,8 +113,8 @@ ObjectDetection::DetectionResult& ObjectDetection::detectObject(Mat &img, std::s
     inRange(imgHsv, Scalar(obj->h_min, obj->s_min, obj->v_min), Scalar(obj->h_max, obj->s_max, obj->v_max), imgRange);
     
     if(morph) {
-        Mat erodeElem = getStructuringElement(MORPH_RECT, Size(3, 3));
-        Mat dilateElem = getStructuringElement(MORPH_RECT, Size(3, 3));
+        Mat erodeElem = getStructuringElement(MORPH_RECT, Size(6, 6));
+        Mat dilateElem = getStructuringElement(MORPH_RECT, Size(6, 6));
         
         erode(imgRange, imgRange, erodeElem);
         erode(imgRange, imgRange, erodeElem);
@@ -144,29 +144,65 @@ ObjectDetection::DetectionResult& ObjectDetection::detectObject(Mat &img, std::s
     for( int i = 0; i< contours.size(); i++ ) {
         double size = contourArea(contours[i]);
         if(size > minSize) {
-            res.detected = true;
-            res.centerX = (int)(mc[i].x);
-            res.centerY = (int)(mc[i].y);
-            res.distance = (floor((obj->getDistance(size))*100)/100);
-            res.size = size;
+            res->detected = true;
+            res->centerX = (int)(mc[i].x);
+            res->centerY = (int)(mc[i].y);
+            res->distance = (floor((obj->getDistance(size))*100)/100);
+            res->size = size;
             
             Scalar color = Scalar(255, 255, 255);
             drawContours( *drawing, contours, i, color, 2, 8, hierarchy, 0, Point() );
             circle( *drawing, mc[i], 4, color, -1, 8, 0 );
             std::ostringstream oss;
-            oss << "Center: (" << res.centerX << "," << res.centerY << ")   Size: " << res.size;
+            oss << "Center: (" << res->centerX << "," << res->centerY << ")   Size: " << res->size;
             std::ostringstream oss2;
-            oss2 << "Distance: " << res.distance;
+            oss2 << "Distance: " << res->distance;
             
             putText(*drawing, oss.str().c_str(), cv::Point(10,15), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
             putText(*drawing, oss2.str().c_str(), cv::Point(10,29), CV_FONT_HERSHEY_SIMPLEX, 0.45, cv::Scalar(255, 255, 255),1,8,false);
-            res.imgRange = drawing;
+            res->imgRange = drawing;
             
             i = contours.size();
         }
     }
     
-    return res;
+    return *res;
+}
+
+ObjectDetection::DetectionResult &ObjectDetection::detectCircle(const Mat &img)
+{
+    Mat src_gray;
+    Mat src = Mat(img);
+    cvtColor(src, src_gray, CV_BGR2GRAY );
+    
+    GaussianBlur( src_gray, src_gray, Size(9, 9), 2, 2 );
+    
+    vector<Vec3f> circles;
+    
+    HoughCircles( src_gray, circles, CV_HOUGH_GRADIENT, 1, src_gray.rows/8, 200, 100, 0, 0 );
+    
+    DetectionResult *res = new DetectionResult;
+    
+    int r = 0;
+    Mat* drawing = new Mat(Mat::zeros(src.size(), CV_8UC3));
+    res->imgRange = drawing;
+    for( size_t i = 0; i < circles.size(); i++ )
+    {
+        res->imgRange = drawing;
+        Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+        int radius = cvRound(circles[i][2]);
+        if(r < radius) {
+            res->detected = true;
+            res->size = radius;
+            res->centerX = center.x;
+            res->centerY = center.y;
+            r = radius;
+        }
+        circle( *drawing, center, 3, Scalar(0,255,0), -1, 8, 0 );
+        circle( *drawing, center, radius, Scalar(0,0,255), 3, 8, 0 );
+    }
+    
+    return *res;
 }
 
 void ObjectDetection::test()

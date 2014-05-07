@@ -13,13 +13,35 @@
 	</object>
 	<object>
 		<name>bowl</name>
-		<hmin>2</hmin>
-		<hmax>20</hmax>
-		<smin>151</smin>
-		<smax>207</smax>
-		<vmin>211</vmin>
+		<hmin>0</hmin>
+		<hmax>25</hmax>
+		<smin>163</smin>
+		<smax>256</smax>
+		<vmin>214</vmin>
 		<vmax>256</vmax>
 		<dist at="1">1000</dist>
 		<dist at="2">300</dist>
+	</object>
+	<object>
+		<name>rose</name>
+		<hmin>141</hmin>
+		<hmax>231</hmax>
+		<smin>159</smin>
+		<smax>225</smax>
+		<vmin>150</vmin>
+		<vmax>256</vmax>
+		<dist at="1">5700</dist>
+		<dist at="2">900</dist>
+	</object>
+	<object>
+		<name>rose2</name>
+		<hmin>148</hmin>
+		<hmax>193</hmax>
+		<smin>95</smin>
+		<smax>157</smax>
+		<vmin>176</vmin>
+		<vmax>256</vmax>
+		<dist at="1">1150</dist>
+		<dist at="2">350</dist>
 	</object>
 </objects>
