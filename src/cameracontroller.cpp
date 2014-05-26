@@ -13,6 +13,7 @@ CameraController& CameraController::getInstance() {
 
 void CameraController::start() {
     if(!started) {
+        this->hasNew = false;
         this->thread = new boost::thread(boost::bind(&CameraController::__start, this));
         this->started = true;
     }
@@ -52,12 +53,17 @@ void CameraController::image_callback(const sensor_msgs::ImageConstPtr& msg) {
     try {
         cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
         this->lastImg = cv_ptr->image;
+        hasNew = true;
     }
     catch(cv_bridge::Exception& e) {
         std::cout << "Erreur cv_bridge -> " << e.what() << std::endl;
     }
 
     img_mutex.unlock();
+}
+
+bool CameraController::hasNewImage() {
+    return this->hasNew;
 }
 
 cv::Mat& CameraController::getImage() {
